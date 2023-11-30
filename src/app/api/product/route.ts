@@ -7,6 +7,7 @@ const createProductSchema = z.object({
   description: z.string().min(1),
 });
 
+// Add product
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const valid = createProductSchema.safeParse(body);
@@ -22,6 +23,7 @@ export async function POST(request: NextRequest) {
   return NextResponse.json(newProduct, { status: 201 });
 }
 
+// Get all Product
 export async function GET(req: NextRequest) {
   const allProduct = await prisma.product.findMany();
   return NextResponse.json(allProduct);
