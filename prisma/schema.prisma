@@ -21,6 +21,6 @@ model Product {
 model User {
   id             Int     @id @default(autoincrement())
   name           String
-  email          String
-  hashedPassword String?
+  email          String @unique
+  hashedPassword String
 }
