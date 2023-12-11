@@ -5,3 +5,4 @@
 - Prisma
 - Postgres
 - Tailwindcss
+- Nextauth
